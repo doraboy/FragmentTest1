@@ -14,8 +14,15 @@
         android:textSize="24sp"
         />
     <Button
+        android:id="@+id/f2_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="F2 Btn"
+        android:text="F2 Btn（出樂透訊息到f4）"
+        />
+    <TextView
+        android:id="@+id/f2_mesg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
         />
 </LinearLayout>

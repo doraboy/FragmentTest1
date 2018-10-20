@@ -7,8 +7,17 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/main_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="36sp"
+        android:gravity="center"
+        android:text="Brad"
+        />
+
     <LinearLayout
-        android:id="@+id/bottom"
+        android:id="@+id/bottom_func"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -46,9 +55,9 @@
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_above="@id/bottom"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottom_func"
+        android:layout_below="@id/main_title"
         android:background="#ff0"
         >
 

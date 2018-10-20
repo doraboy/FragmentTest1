@@ -8,27 +8,29 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 public class F4 extends Fragment {
+    private View mainView;
+    private TextView mesg;
+    private String value = "";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         Log.v("brad","F4:onCreateView()");
-        return inflater.inflate(R.layout.fragment_f4, container, false);
+
+        if(mainView == null) {
+            mainView = inflater.inflate(R.layout.fragment_f4, container, false);
+        }
+        mesg = mainView.findViewById(R.id.f4_mesg);
+        mesg.setText(value);
+
+        return mainView;
     }
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        Log.v("brad","F4:onAttach()");
-
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        Log.v("brad","F4:onDetach()");
+    public void changeMesg(String mesg){
+        value = mesg;
     }
 
 }

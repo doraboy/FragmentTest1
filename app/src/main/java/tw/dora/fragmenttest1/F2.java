@@ -8,29 +8,37 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 
 public class F2 extends Fragment {
-
+    private TextView mesg;
+    private View mainView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         Log.v("brad","F2:onCreateView()");
-        return inflater.inflate(R.layout.fragment_f2, container, false);
+        mainView =  inflater.inflate(R.layout.fragment_f2, container, false);
+        mesg = mainView.findViewById(R.id.f2_mesg);
+        mainView.findViewById(R.id.f2_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                changeF4Mesg();
+            }
+        });
+
+        return mainView;
     }
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        Log.v("brad","F2:onAttach()");
+    private void changeF4Mesg(){
+        ((MainActivity)getActivity()).F2ChangeF4("Haha!"+(int)(Math.random()*49+1));
 
     }
 
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        Log.v("brad","F2:onDetach()");
+    public void showCounter (String counter){
+        if(mesg == null) return;
+        mesg.setText(counter);
     }
 
 }

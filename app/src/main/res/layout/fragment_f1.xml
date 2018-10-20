@@ -17,7 +17,7 @@
         android:id="@+id/f1_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="F1 Btn"
+        android:text="F1 Btn（出樂透）"
         />
     <TextView
         android:id="@+id/f1_lottery"
