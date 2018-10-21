@@ -90,26 +90,30 @@ public class MainActivity extends AppCompatActivity {
     public void gotoPage1(View view) {
         FragmentTransaction transaction = fmgr.beginTransaction();
         transaction.replace(R.id.container,f1);
+        //各fragment若存在相依順序關係,即可加以下這行,以實現用back鍵直接返回上一頁
+        //且還可保留原有的資料
+        transaction.addToBackStack(null);
         transaction.commit();
     }
 
     public void gotoPage2(View view) {
         FragmentTransaction transaction = fmgr.beginTransaction();
         transaction.replace(R.id.container,f2);
+        transaction.addToBackStack(null);
         transaction.commit();
-
-
     }
 
     public void gotoPage3(View view) {
         FragmentTransaction transaction = fmgr.beginTransaction();
         transaction.replace(R.id.container,f3);
+        transaction.addToBackStack(null);
         transaction.commit();
     }
 
     public void gotoPage4(View view) {
         FragmentTransaction transaction = fmgr.beginTransaction();
         transaction.replace(R.id.container,f4);
+        transaction.addToBackStack(null);
         transaction.commit();
     }
 
